@@ -4,7 +4,6 @@ var filter = document.getElementById('filter');
 var date = new Date();
 var id = "" + date.getMinutes(); + date.getSeconds() + date.getMilliseconds() + "";
 var lin;
-var liId;
 var ids;
 var lio;
 
@@ -67,9 +66,6 @@ function addItem(e){
   // Append button to li
   li.appendChild(editBtn);
     
-    
-    //span
-    
    
 
   // Append li to list
@@ -87,8 +83,7 @@ function editItem(e){
         lin = e.target.parentElement;
     
         var text = lin.getElementsByTagName('span')[0].textContent;
-         liId = lin.id;
-         ids = lin.id
+         ids = lin.id;
         document.getElementById('item').value = text;
         var btnNew = document.getElementById('btnAdd');
         btnNew.innerHTML = 'Edit';
@@ -122,7 +117,7 @@ btnNew.onclick = function() {
       this.innerHTML = 'Submit';
        var ItemTexts = document.getElementById('item').value;
         
-     //   if(liId === ids){
+   
              lio = document.getElementById(ids); 
              lio.getElementsByTagName('span')[0].textContent = ItemTexts;
             
@@ -131,7 +126,7 @@ btnNew.onclick = function() {
             document.getElementById('item').value = "";
 
             
-     //   }
+ 
 
 
         if (!itemText || itemText === "" || itemText === " ") {
